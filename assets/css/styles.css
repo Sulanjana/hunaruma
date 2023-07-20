@@ -39,6 +39,55 @@ h1 {
   font-family: "Inter", sans-serif;
 }
 
+.container {
+  width: 100%;
+  overflow: hidden; /* Allow content to overflow container */
+}
+
+.flex-items {
+  display: flex;
+  transition: 1s;
+  width: 100%;
+}
+
+#home-page:target ~ .flex-items {
+  margin-left: 0px;
+}
+
+#about-page:target ~ .flex-items {
+  margin-left: -100%;
+}
+
+#menu-page:target ~ .flex-items {
+  margin-left: -200%;
+}
+
+#gallery-page:target ~ .flex-items {
+  margin-left: -300%;
+}
+#contact-page:target ~ .flex-items {
+  margin-left: -400%;
+}
+
+#home:target ~ .flex-items {
+  margin-left: 0px;
+}
+
+#about:target ~ .flex-items {
+  margin-left: -100%;
+}
+
+#menu:target ~ .flex-items {
+  margin-left: -200%;
+}
+
+#gallery:target ~ .flex-items {
+  margin-left: -300%;
+}
+#contact:target ~ .flex-items {
+  margin-left: -400%;
+}
+
 .home,
 .about,
 .menu,
@@ -49,7 +98,61 @@ h1 {
   background-position: center;
   height: 100%;
   padding-top: 37px;
+  height: 862px;
+  min-width: 100%;
   /* not responsive */
+}
+
+.gallery-scroll {
+  background-size: cover;
+  /* not responsive */
+  background-position: center;
+  height: 100%;
+  padding-top: 37px;
+  height: 862px;
+  min-width: 100%;
+  background-image: url("../img/gallery_page.jpg");
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.menu-scroll {
+  background-size: cover;
+  /* not responsive */
+  background-position: center;
+  height: 100%;
+  padding-top: 37px;
+  height: 862px;
+  min-width: 100%;
+  background-image: url("../img/menu_page.jpg");
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-scroll {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.menu-scroll {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.menu-scroll::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .home {
@@ -58,10 +161,14 @@ h1 {
 .about {
   background-image: url("../img/about_page.jpg");
 }
-.menu,
+.menu {
+  background-image: url("../img/menu_page.jpg");
+  height: 431px;
+}
+
 .gallery {
   background-image: url("../img/gallery_page.jpg");
-  height: 50%;
+  height: 431px;
 }
 
 .contact {
@@ -196,7 +303,7 @@ nav ul li a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px;
+  margin-top: 20px;
   margin-left: 100px;
   margin-right: 100px;
 }
